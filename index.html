@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Alessandro Stazzone — IT E-Commerce Design & Feasibility</title>
 <meta name="description" content="Profilo professionale di Alessandro Stazzone — E-Commerce & Omnichannel Project Specialist" />
-https://fonts.googleapis.com
-static.com" crossorigin />
-tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+static.com" crossorigin>
+700&family=Barlow+Condensed:wght@500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --bg:#ffffff;
-    --bg-alt:#f7f7f8;
+    --bg-alt:#f4f4f4;
     --ink:#0a0a0a;
     --ink-soft:#2a2a2a;
     --muted:#8a8a8a;
@@ -19,136 +21,175 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
     --line-soft:#dcdcdc;
     --accent:#6b3fa0;
     --accent-soft:#efeaf7;
+
+    --font-display:'Barlow Condensed', sans-serif;
+    --font-sub:'Barlow', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Inter',system-ui,sans-serif;
+    font-family:var(--font-mono);
     background:var(--bg);
     color:var(--ink);
-    line-height:1.55;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
-    font-weight:300;
+    font-weight:400;
+    font-size:14px;
   }
-  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.5px}
+  h1,h2,h3{font-family:var(--font-display);letter-spacing:0;text-transform:uppercase}
   a{color:inherit;text-decoration:none}
-  .container{max-width:1200px;margin:0 auto;padding:0 40px}
+  .container{max-width:1240px;margin:0 auto;padding:0 40px}
   @media(max-width:640px){.container{padding:0 22px}}
 
+  /* RIBBON TECH */
   .ribbon{
-    border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
-    padding:10px 0;text-align:center;
-    font-size:.7rem;letter-spacing:4px;text-transform:uppercase;
+    padding:9px 0;text-align:center;
+    font-family:var(--font-mono);
+    font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
     color:var(--ink);font-weight:500;
+    background:var(--bg);
   }
+  .ribbon .dot{color:var(--accent);margin:0 12px}
 
-  nav{background:var(--bg);border-bottom:1px solid var(--line-soft);padding:22px 0}
+  /* NAV MINIMAL INDUSTRIAL */
+  nav{
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+    position:sticky;top:0;z-index:100;
+  }
   .nav-inner{display:flex;justify-content:space-between;align-items:center}
   .logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.5rem;font-weight:600;letter-spacing:6px;
+    font-family:var(--font-mono);
+    font-size:.85rem;font-weight:600;letter-spacing:3px;
     text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;
   }
-  .nav-links{display:flex;gap:36px;font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase}
-  .nav-links a{color:var(--ink-soft);transition:color .2s}
-  .nav-links a:hover{color:var(--accent)}
+  .logo::before{
+    content:"";width:10px;height:10px;background:var(--accent);
+    display:inline-block;
+  }
+  .nav-links{
+    display:flex;gap:0;
+    font-family:var(--font-mono);
+    font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;
+  }
+  .nav-links a{
+    color:var(--ink-soft);
+    padding:6px 20px;
+    border-left:1px solid var(--line-soft);
+    transition:all .2s;
+    position:relative;
+  }
+  .nav-links a:last-child{border-right:1px solid var(--line-soft)}
+  .nav-links a:hover{color:var(--accent);background:var(--bg-alt)}
   @media(max-width:768px){.nav-links{display:none}}
 
   /* HERO CON FOTO */
-  .hero{padding:100px 0 90px}
+  .hero{padding:80px 0 90px}
   .hero-grid{
-    display:grid;grid-template-columns:340px 1fr;gap:80px;align-items:center;
+    display:grid;grid-template-columns:360px 1fr;gap:70px;align-items:center;
   }
   @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap:50px;text-align:center}
+    .hero-grid{grid-template-columns:1fr;gap:50px;text-align:left}
   }
   .hero-photo{
     width:100%;aspect-ratio:4/5;
-    background:#eee;overflow:hidden;
+    background:var(--bg-alt);overflow:hidden;
     position:relative;
-    filter:grayscale(15%);
-    transition:filter .4s;
+    filter:grayscale(100%) contrast(1.05);
+    transition:filter .5s ease;
   }
-  .hero-photo:hover{filter:grayscale(0%)}
+  .hero-photo:hover{filter:grayscale(0%) contrast(1)}
   .hero-photo img{
     width:100%;height:100%;object-fit:cover;display:block;
   }
-  .hero-photo::after{
-    content:"";position:absolute;inset:0;
-    border:1px solid var(--ink);
-    pointer-events:none;
-    transform:translate(12px,12px);
+  .hero-photo-frame{
+    position:relative;
+  }
+  .hero-photo-frame::before{
+    content:"";position:absolute;
+    top:14px;left:14px;right:-14px;bottom:-14px;
+    border:1px solid var(--accent);
     z-index:-1;
   }
+  .hero-photo-tag{
+    position:absolute;bottom:0;left:0;
+    background:var(--ink);color:var(--bg);
+    font-family:var(--font-mono);
+    font-size:.65rem;letter-spacing:2px;text-transform:uppercase;
+    padding:6px 12px;
+  }
   .hero h1{
-    font-size:clamp(3rem,6.5vw,5.5rem);
-    line-height:.95;letter-spacing:4px;
-    text-transform:uppercase;font-weight:500;
-    margin-bottom:24px;
+    font-family:var(--font-display);
+    font-size:clamp(4rem,10vw,8rem);
+    line-height:.88;font-weight:800;
+    margin-bottom:24px;letter-spacing:-1px;
   }
   .hero-rule{
-    width:100px;height:1px;background:var(--ink);
+    width:80px;height:3px;background:var(--ink);
     margin:0 0 24px;
   }
-  @media(max-width:900px){.hero-rule{margin:0 auto 24px}}
+  @media(max-width:900px){.hero-rule{margin:0 0 24px}}
   .hero-subtitle{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.3rem;font-style:italic;color:var(--ink-soft);
-    margin-bottom:14px;
+    font-family:var(--font-sub);
+    font-size:1.2rem;font-weight:500;color:var(--ink);
+    text-transform:uppercase;letter-spacing:2px;
+    margin-bottom:16px;
   }
   .hero-meta{
-    font-size:.7rem;letter-spacing:3px;text-transform:uppercase;
-    color:var(--muted);margin-bottom:30px;
+    font-family:var(--font-mono);
+    font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
+    color:var(--muted);margin-bottom:28px;
   }
   .hero-tags{
-    display:flex;gap:10px;flex-wrap:wrap;
+    display:flex;gap:8px;flex-wrap:wrap;
   }
-  @media(max-width:900px){.hero-tags{justify-content:center}}
   .hero-tags span{
+    font-family:var(--font-mono);
     font-size:.68rem;letter-spacing:2px;text-transform:uppercase;
-    padding:6px 14px;border:1px solid var(--line-soft);
-    color:var(--ink-soft);
+    padding:6px 12px;border:1px solid var(--ink);
+    color:var(--ink);font-weight:500;
   }
 
-  section{padding:110px 0;position:relative}
+  section{padding:100px 0;position:relative}
   section.alt{background:var(--bg-alt)}
   .sect-head{
-    display:flex;align-items:center;gap:30px;
-    padding:22px 0;
-    border-top:1px solid var(--line);
+    display:flex;align-items:baseline;gap:24px;
+    padding:20px 0;
+    border-top:2px solid var(--line);
     border-bottom:1px solid var(--line);
-    margin-bottom:70px;
+    margin-bottom:60px;
   }
   .sect-num{
-    font-family:'Cormorant Garamond',serif;
-    font-size:2.6rem;font-weight:500;color:var(--accent);
-    line-height:1;min-width:60px;
+    font-family:var(--font-mono);
+    font-size:.85rem;font-weight:500;color:var(--accent);
+    letter-spacing:3px;
   }
   .sect-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:2.2rem;font-weight:500;letter-spacing:4px;
-    text-transform:uppercase;
-  }
-  @media(max-width:640px){
-    .sect-title{font-size:1.4rem;letter-spacing:2px}
-    .sect-num{font-size:2rem}
+    font-family:var(--font-display);
+    font-size:clamp(2rem,4vw,3.4rem);
+    font-weight:600;letter-spacing:0;
+    text-transform:uppercase;line-height:1;
   }
 
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
   @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:36px}}
-  .about-grid p{color:var(--ink-soft);font-size:1rem;margin-bottom:18px}
-  .about-grid p strong{color:var(--ink);font-weight:500}
+  .about-grid p{color:var(--ink-soft);font-size:.9rem;margin-bottom:16px;line-height:1.7}
+  .about-grid p strong{color:var(--ink);font-weight:600}
   .about-lead{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.6rem;line-height:1.4;font-style:italic;
+    font-family:var(--font-sub);
+    font-size:1.5rem;line-height:1.3;font-weight:500;
     color:var(--ink);margin-bottom:24px;
+    text-transform:uppercase;letter-spacing:.5px;
   }
 
   .journey{display:grid;gap:0}
   .j-item{
-    display:grid;grid-template-columns:60px 220px 1fr;gap:40px;
-    padding:44px 0;border-top:1px solid var(--line-soft);
+    display:grid;grid-template-columns:60px 200px 1fr;gap:40px;
+    padding:42px 0;border-top:1px solid var(--line-soft);
     align-items:start;
   }
   .j-item:last-child{border-bottom:1px solid var(--line-soft)}
@@ -157,39 +198,44 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
     .j-item{grid-template-columns:1fr;gap:14px}
   }
   .j-num{
-    font-family:'Cormorant Garamond',serif;
-    font-size:2.6rem;color:var(--muted);transition:color .3s;line-height:1;
+    font-family:var(--font-mono);
+    font-size:1.1rem;font-weight:500;color:var(--muted);
+    transition:color .3s;letter-spacing:2px;
+    padding-top:6px;
   }
   .j-date{
-    font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
-    color:var(--ink-soft);font-weight:500;padding-top:12px;
+    font-family:var(--font-mono);
+    font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--ink);font-weight:500;padding-top:10px;
   }
   .j-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.9rem;font-weight:500;letter-spacing:2px;
-    text-transform:uppercase;margin-bottom:6px;
+    font-family:var(--font-display);
+    font-size:2rem;font-weight:700;letter-spacing:0;
+    text-transform:uppercase;margin-bottom:6px;line-height:1;
   }
   .j-role{
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;font-size:1rem;color:var(--muted);
-    margin-bottom:18px;
+    font-family:var(--font-sub);
+    font-weight:500;font-size:.85rem;color:var(--muted);
+    margin-bottom:18px;text-transform:uppercase;letter-spacing:1.5px;
   }
   .j-content ul{list-style:none;padding:0}
   .j-content li{
     position:relative;padding-left:22px;margin-bottom:8px;
-    color:var(--ink-soft);font-size:.95rem;
+    color:var(--ink-soft);font-size:.88rem;line-height:1.6;
+    font-family:var(--font-mono);font-weight:300;
   }
   .j-content li::before{
-    content:"";position:absolute;left:0;top:11px;
-    width:12px;height:1px;background:var(--accent);
+    content:"";position:absolute;left:0;top:10px;
+    width:12px;height:2px;background:var(--accent);
   }
 
   .callout{
     background:var(--accent-soft);
     border-left:3px solid var(--accent);
-    padding:22px 26px;margin-top:20px;
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.05rem;font-style:italic;color:var(--ink);
+    padding:18px 22px;margin-top:20px;
+    font-family:var(--font-sub);
+    font-size:.95rem;font-weight:500;color:var(--ink);
+    line-height:1.5;
   }
 
   .skills-grid{
@@ -197,50 +243,59 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
     gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);
   }
   .skill-card{
-    padding:34px 30px;
+    padding:30px 26px;
     border-right:1px solid var(--line);border-bottom:1px solid var(--line);
     background:var(--bg);transition:background .25s;
   }
   .skill-card:hover{background:var(--bg-alt)}
   .skill-num{
-    display:inline-block;font-family:'Cormorant Garamond',serif;
-    font-size:1.3rem;color:var(--accent);margin-bottom:14px;
+    display:inline-block;font-family:var(--font-mono);
+    font-size:.72rem;color:var(--accent);margin-bottom:14px;
+    letter-spacing:2px;font-weight:500;
   }
   .skill-card h3{
-    font-size:.78rem;letter-spacing:3px;text-transform:uppercase;
-    font-family:'Inter',sans-serif;font-weight:600;
-    color:var(--ink);margin-bottom:18px;
+    font-family:var(--font-display);
+    font-size:1.5rem;font-weight:700;letter-spacing:0;
+    text-transform:uppercase;color:var(--ink);margin-bottom:18px;
+    line-height:1;
   }
-  .skill-card ul{list-style:none;font-size:.92rem;color:var(--ink-soft)}
-  .skill-card li{padding:5px 0;border-bottom:1px dotted var(--line-soft)}
+  .skill-card ul{list-style:none;font-family:var(--font-mono);
+    font-size:.8rem;color:var(--ink-soft);font-weight:400;}
+  .skill-card li{padding:6px 0;border-bottom:1px dotted var(--line-soft)}
   .skill-card li:last-child{border-bottom:none}
 
   .key-bar{
     text-align:center;padding:60px 30px;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    border-top:2px solid var(--line);border-bottom:2px solid var(--line);
     margin:60px 0;
   }
   .key-bar p{
-    font-family:'Cormorant Garamond',serif;
-    font-size:1.6rem;font-style:italic;font-weight:400;
-    max-width:800px;margin:0 auto;line-height:1.4;
+    font-family:var(--font-display);
+    font-size:clamp(1.4rem,3vw,2rem);
+    font-weight:600;letter-spacing:0;
+    text-transform:uppercase;
+    max-width:900px;margin:0 auto;line-height:1.2;
   }
   .key-bar .accent{
-    color:var(--accent);font-weight:500;font-style:normal;
-    letter-spacing:2px;text-transform:uppercase;font-size:1.05rem;
-    display:block;margin-bottom:14px;
+    font-family:var(--font-mono);
+    color:var(--accent);font-weight:500;
+    letter-spacing:3px;text-transform:uppercase;font-size:.75rem;
+    display:block;margin-bottom:20px;
   }
 
   footer{background:var(--ink);color:#e0e0e0;padding:80px 0 40px}
   footer .container{text-align:center}
   footer h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;letter-spacing:6px;text-transform:uppercase;
-    color:#fff;margin-bottom:16px;font-weight:500;
+    font-family:var(--font-display);
+    font-size:clamp(2.5rem,5vw,4rem);
+    letter-spacing:0;text-transform:uppercase;
+    color:#fff;margin-bottom:16px;font-weight:800;
+    line-height:1;
   }
   footer .lead{
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;font-size:1.2rem;color:#b0b0b0;
+    font-family:var(--font-mono);
+    font-size:.8rem;color:#b0b0b0;font-weight:300;
+    letter-spacing:2px;text-transform:uppercase;
     margin-bottom:36px;
   }
   .socials{
@@ -249,44 +304,53 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
     max-width:700px;margin:0 auto;
   }
   .socials a{
-    padding:20px 32px;font-size:.72rem;letter-spacing:3px;
+    padding:20px 32px;font-family:var(--font-mono);
+    font-size:.72rem;letter-spacing:3px;font-weight:500;
     text-transform:uppercase;color:#e0e0e0;
     border-right:1px solid #333;transition:all .2s;
   }
   .socials a:last-child{border-right:none}
   .socials a:hover{background:var(--accent);color:#fff}
   .copy{
-    margin-top:50px;font-size:.65rem;letter-spacing:2px;
+    margin-top:50px;font-family:var(--font-mono);
+    font-size:.65rem;letter-spacing:2px;
     text-transform:uppercase;color:#666;
   }
 </style>
 </head>
 <body>
 
-<div class="ribbon">Alessandro Stazzone · Professional Profile · 2026</div>
+<div class="ribbon">
+  <span>AS_001</span><span class="dot">//</span>
+  <span>Professional Profile</span><span class="dot">//</span>
+  <span>MI · 2026</span>
+</div>
 
 <nav>
   <div class="container nav-inner">
-    <div class="logo">A · S</div>
+    <div class="logo">AS · Stazzone</div>
     <div class="nav-links">
       #about
       #journey
       #expertise
-      act">Contact</a>
+      #contact
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="container hero-grid">
-    <div class="hero-photo">
-      <img src="profilo.jpg" alt="Alessandro Stazzone" />
+    <div class="hero-photo-frame">
+      <div class="hero-photo">
+        ilo.jpg" alt="Alessandro Stazzone" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=display:flex;height:100%;align-items:center;justify-content:center;font-family:var(--font-display);font-size:5rem;font-weight:800;color:#0a0a0a;>AS</div>'" />
+        <div class="hero-photo-tag">AS · 2026</div>
+      </div>
     </div>
     <div>
       <h1>Alessandro<br/>Stazzone</h1>
       <div class="hero-rule"></div>
-      <div class="hero-subtitle">IT E-Commerce Design &amp; Feasibility · Project Specialist</div>
-      <div class="hero-meta">Milano · Luxury Digital · Omnichannel</div>
+      <div class="hero-subtitle">IT E-Commerce Design &amp; Feasibility</div>
+      <div class="hero-meta">Project Specialist · Milano · Luxury Digital</div>
       <div class="hero-tags">
         <span>SAP CC</span>
         <span>AEM</span>
@@ -301,7 +365,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
 <section id="about">
   <div class="container">
     <div class="sect-head">
-      <div class="sect-num">01</div>
+      <div class="sect-num">01 //</div>
       <div class="sect-title">About</div>
     </div>
     <div class="about-grid">
@@ -321,7 +385,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
 
 <div class="container">
   <div class="key-bar">
-    <span class="accent">Vision</span>
+    <span class="accent">// Vision</span>
     <p>"Trasformare la complessità dei progetti digitali luxury in delivery misurabili, con eleganza tecnica e ownership condivisa."</p>
   </div>
 </div>
@@ -329,7 +393,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
 <section id="journey" class="alt">
   <div class="container">
     <div class="sect-head">
-      <div class="sect-num">02</div>
+      <div class="sect-num">02 //</div>
       <div class="sect-title">Career Journey</div>
     </div>
 
@@ -425,12 +489,12 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
 <section id="expertise">
   <div class="container">
     <div class="sect-head">
-      <div class="sect-num">03</div>
+      <div class="sect-num">03 //</div>
       <div class="sect-title">Expertise</div>
     </div>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-num">01</div>
+        <div class="skill-num">// 01</div>
         <h3>Piattaforme</h3>
         <ul>
           <li>SAP Commerce Cloud</li>
@@ -441,7 +505,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-num">02</div>
+        <div class="skill-num">// 02</div>
         <h3>Metodologie</h3>
         <ul>
           <li>Agile — Sprint & Release</li>
@@ -451,7 +515,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-num">03</div>
+        <div class="skill-num">// 03</div>
         <h3>Aree Progetto</h3>
         <ul>
           <li>E-Commerce Redesign</li>
@@ -462,7 +526,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-num">04</div>
+        <div class="skill-num">// 04</div>
         <h3>Soft Skills</h3>
         <ul>
           <li>Stakeholder Management</li>
@@ -472,7 +536,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-num">05</div>
+        <div class="skill-num">// 05</div>
         <h3>Formazione</h3>
         <ul>
           <li>Master LUISS + SKEMA</li>
@@ -481,7 +545,7 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
         </ul>
       </div>
       <div class="skill-card">
-        <div class="skill-num">06</div>
+        <div class="skill-num">// 06</div>
         <h3>Lingue</h3>
         <ul>
           <li>Italiano — Madrelingua</li>
@@ -496,12 +560,13 @@ tin:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="styles
 <footer id="contact">
   <div class="container">
     <h2>Get in Touch</h2>
-    <p class="lead">Aperto a scambi su e-commerce luxury, omnichannel e digitalials">
-      alessandro.stazzone@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/alessandro-stazzone-3575b0b6" target="_blank" rel="noopener">LinkedIn</a>
-      https://github.com/stazatester</a>
+    <p class="lead">// E-Commerce · Omnichannel · Digital Transformation</p>
+    <div class="socials">
+      ailto:alessandro.stazzone@example.com">Email</a>
+      <a href="https://linkedin.com/in/alessandro-stazzone" target="_blank" rel="noopener">LinkedIn</a>
+      https://github.com/stazatester
     </div>
-    <div class="copy">© 2026 · Alessandro Stazzone · Strictly Personal</div>
+    <div class="copy">© 2026 · AS_001 · Strictly Personal</div>
   </div>
 </footer>
 
