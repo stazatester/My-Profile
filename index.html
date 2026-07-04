@@ -1,574 +1,323 @@
 <!DOCTYPE html>
-<html lang="it">
+<**ml lang="it**
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Alessandro Stazzone — IT E-Commerce Design & Feasibility</title>
-<meta name="description" content="Profilo professionale di Alessandro Stazzone — E-Commerce & Omnichannel Project Specialist" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-static.com" crossorigin>
-700&family=Barlow+Condensed:wght@500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<m**a name="viewport" content="width=**vice-width, initial-scale=1.0">
+<**tle>Alessandro Stazz**e — IT E-Commerce Design & Feasib**ity</title>
+<me** name="description" content="Prof**o professionale di Alessandro Sta**one">
+<link rel="preconnect" href**https://fonts.googleapis.com">
+st**ic.com**crossorigin>
+700&family=Barlow+Co**ensed:wght@500**00;700;800;900&family=JetBrains+M**o:wght@300;400;500;600&display=sw**" rel="stylesheet">
 <style>
-  :root{
-    --bg:#ffffff;
-    --bg-alt:#f4f4f4;
-    --ink:#0a0a0a;
-    --ink-soft:#2a2a2a;
-    --muted:#8a8a8a;
-    --line:#0a0a0a;
-    --line-soft:#dcdcdc;
-    --accent:#6b3fa0;
-    --accent-soft:#efeaf7;
-
-    --font-display:'Barlow Condensed', sans-serif;
-    --font-sub:'Barlow', sans-serif;
-    --font-mono:'JetBrains Mono', monospace;
+  **oot{
+    --bg:#ffffff; --bg-alt:#**f4f4; --ink:#0a0a0a; --ink-soft:#**2a2a;
+    --**ted:#8a8a8a; --line:#0a0a0a; --li**-soft:#dcdcdc;
+    --accent:#6b**a0; --accent-soft:#efeaf7;
+    --**nt-display:'Barlow Condensed',**ans-serif;
+    --font-sub:'Barlow** sans-serif;
+    --font-mono:'Jet**ains Mono', monospace;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:var(--font-mono);
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    font-weight:400;
-    font-size:14px;
-  }
-  h1,h2,h3{font-family:var(--font-display);letter-spacing:0;text-transform:uppercase}
-  a{color:inherit;text-decoration:none}
-  .container{max-width:1240px;margin:0 auto;padding:0 40px}
-  @media(max-width:640px){.container{padding:0 22px}}
-
-  /* RIBBON TECH */
-  .ribbon{
-    border-bottom:1px solid var(--line);
-    padding:9px 0;text-align:center;
-    font-family:var(--font-mono);
-    font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
-    color:var(--ink);font-weight:500;
-    background:var(--bg);
-  }
-  .ribbon .dot{color:var(--accent);margin:0 12px}
-
-  /* NAV MINIMAL INDUSTRIAL */
-  nav{
-    background:var(--bg);
-    border-bottom:1px solid var(--line);
-    padding:18px 0;
-    position:sticky;top:0;z-index:100;
-  }
-  .nav-inner{display:flex;justify-content:space-between;align-items:center}
-  .logo{
-    font-family:var(--font-mono);
-    font-size:.85rem;font-weight:600;letter-spacing:3px;
-    text-transform:uppercase;
-    display:flex;align-items:center;gap:10px;
-  }
-  .logo::before{
-    content:"";width:10px;height:10px;background:var(--accent);
-    display:inline-block;
-  }
-  .nav-links{
-    display:flex;gap:0;
-    font-family:var(--font-mono);
-    font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;
-  }
-  .nav-links a{
-    color:var(--ink-soft);
-    padding:6px 20px;
-    border-left:1px solid var(--line-soft);
-    transition:all .2s;
-    position:relative;
-  }
-  .nav-links a:last-child{border-right:1px solid var(--line-soft)}
-  .nav-links a:hover{color:var(--accent);background:var(--bg-alt)}
-  @media(max-width:768px){.nav-links{display:none}}
-
-  /* HERO CON FOTO */
-  .hero{padding:80px 0 90px}
-  .hero-grid{
-    display:grid;grid-template-columns:360px 1fr;gap:70px;align-items:center;
-  }
-  @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap:50px;text-align:left}
-  }
-  .hero-photo{
-    width:100%;aspect-ratio:4/5;
-    background:var(--bg-alt);overflow:hidden;
-    position:relative;
-    filter:grayscale(100%) contrast(1.05);
-    transition:filter .5s ease;
-  }
-  .hero-photo:hover{filter:grayscale(0%) contrast(1)}
-  .hero-photo img{
-    width:100%;height:100%;object-fit:cover;display:block;
-  }
-  .hero-photo-frame{
-    position:relative;
-  }
-  .hero-photo-frame::before{
-    content:"";position:absolute;
-    top:14px;left:14px;right:-14px;bottom:-14px;
-    border:1px solid var(--accent);
-    z-index:-1;
-  }
-  .hero-photo-tag{
-    position:absolute;bottom:0;left:0;
-    background:var(--ink);color:var(--bg);
-    font-family:var(--font-mono);
-    font-size:.65rem;letter-spacing:2px;text-transform:uppercase;
-    padding:6px 12px;
-  }
-  .hero h1{
-    font-family:var(--font-display);
-    font-size:clamp(4rem,10vw,8rem);
-    line-height:.88;font-weight:800;
-    margin-bottom:24px;letter-spacing:-1px;
-  }
-  .hero-rule{
-    width:80px;height:3px;background:var(--ink);
-    margin:0 0 24px;
-  }
-  @media(max-width:900px){.hero-rule{margin:0 0 24px}}
-  .hero-subtitle{
-    font-family:var(--font-sub);
-    font-size:1.2rem;font-weight:500;color:var(--ink);
-    text-transform:uppercase;letter-spacing:2px;
-    margin-bottom:16px;
-  }
-  .hero-meta{
-    font-family:var(--font-mono);
-    font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
-    color:var(--muted);margin-bottom:28px;
-  }
-  .hero-tags{
-    display:flex;gap:8px;flex-wrap:wrap;
-  }
-  .hero-tags span{
-    font-family:var(--font-mono);
-    font-size:.68rem;letter-spacing:2px;text-transform:uppercase;
-    padding:6px 12px;border:1px solid var(--ink);
-    color:var(--ink);font-weight:500;
-  }
-
-  section{padding:100px 0;position:relative}
-  section.alt{background:var(--bg-alt)}
-  .sect-head{
-    display:flex;align-items:baseline;gap:24px;
-    padding:20px 0;
-    border-top:2px solid var(--line);
-    border-bottom:1px solid var(--line);
-    margin-bottom:60px;
-  }
-  .sect-num{
-    font-family:var(--font-mono);
-    font-size:.85rem;font-weight:500;color:var(--accent);
-    letter-spacing:3px;
-  }
-  .sect-title{
-    font-family:var(--font-display);
-    font-size:clamp(2rem,4vw,3.4rem);
-    font-weight:600;letter-spacing:0;
-    text-transform:uppercase;line-height:1;
-  }
-
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-  @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:36px}}
-  .about-grid p{color:var(--ink-soft);font-size:.9rem;margin-bottom:16px;line-height:1.7}
-  .about-grid p strong{color:var(--ink);font-weight:600}
-  .about-lead{
-    font-family:var(--font-sub);
-    font-size:1.5rem;line-height:1.3;font-weight:500;
-    color:var(--ink);margin-bottom:24px;
-    text-transform:uppercase;letter-spacing:.5px;
-  }
-
-  .journey{display:grid;gap:0}
-  .j-item{
-    display:grid;grid-template-columns:60px 200px 1fr;gap:40px;
-    padding:42px 0;border-top:1px solid var(--line-soft);
-    align-items:start;
-  }
-  .j-item:last-child{border-bottom:1px solid var(--line-soft)}
-  .j-item:hover .j-num{color:var(--accent)}
-  @media(max-width:768px){
-    .j-item{grid-template-columns:1fr;gap:14px}
-  }
-  .j-num{
-    font-family:var(--font-mono);
-    font-size:1.1rem;font-weight:500;color:var(--muted);
-    transition:color .3s;letter-spacing:2px;
-    padding-top:6px;
-  }
-  .j-date{
-    font-family:var(--font-mono);
-    font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;
-    color:var(--ink);font-weight:500;padding-top:10px;
-  }
-  .j-title{
-    font-family:var(--font-display);
-    font-size:2rem;font-weight:700;letter-spacing:0;
-    text-transform:uppercase;margin-bottom:6px;line-height:1;
-  }
-  .j-role{
-    font-family:var(--font-sub);
-    font-weight:500;font-size:.85rem;color:var(--muted);
-    margin-bottom:18px;text-transform:uppercase;letter-spacing:1.5px;
-  }
-  .j-content ul{list-style:none;padding:0}
-  .j-content li{
-    position:relative;padding-left:22px;margin-bottom:8px;
-    color:var(--ink-soft);font-size:.88rem;line-height:1.6;
-    font-family:var(--font-mono);font-weight:300;
-  }
-  .j-content li::before{
-    content:"";position:absolute;left:0;top:10px;
-    width:12px;height:2px;background:var(--accent);
-  }
-
-  .callout{
-    background:var(--accent-soft);
-    border-left:3px solid var(--accent);
-    padding:18px 22px;margin-top:20px;
-    font-family:var(--font-sub);
-    font-size:.95rem;font-weight:500;color:var(--ink);
-    line-height:1.5;
-  }
-
-  .skills-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);
-  }
-  .skill-card{
-    padding:30px 26px;
-    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
-    background:var(--bg);transition:background .25s;
-  }
-  .skill-card:hover{background:var(--bg-alt)}
-  .skill-num{
-    display:inline-block;font-family:var(--font-mono);
-    font-size:.72rem;color:var(--accent);margin-bottom:14px;
-    letter-spacing:2px;font-weight:500;
-  }
-  .skill-card h3{
-    font-family:var(--font-display);
-    font-size:1.5rem;font-weight:700;letter-spacing:0;
-    text-transform:uppercase;color:var(--ink);margin-bottom:18px;
-    line-height:1;
-  }
-  .skill-card ul{list-style:none;font-family:var(--font-mono);
-    font-size:.8rem;color:var(--ink-soft);font-weight:400;}
-  .skill-card li{padding:6px 0;border-bottom:1px dotted var(--line-soft)}
-  .skill-card li:last-child{border-bottom:none}
-
-  .key-bar{
-    text-align:center;padding:60px 30px;
-    border-top:2px solid var(--line);border-bottom:2px solid var(--line);
-    margin:60px 0;
-  }
-  .key-bar p{
-    font-family:var(--font-display);
-    font-size:clamp(1.4rem,3vw,2rem);
-    font-weight:600;letter-spacing:0;
-    text-transform:uppercase;
-    max-width:900px;margin:0 auto;line-height:1.2;
-  }
-  .key-bar .accent{
-    font-family:var(--font-mono);
-    color:var(--accent);font-weight:500;
-    letter-spacing:3px;text-transform:uppercase;font-size:.75rem;
-    display:block;margin-bottom:20px;
-  }
-
-  footer{background:var(--ink);color:#e0e0e0;padding:80px 0 40px}
-  footer .container{text-align:center}
-  footer h2{
-    font-family:var(--font-display);
-    font-size:clamp(2.5rem,5vw,4rem);
-    letter-spacing:0;text-transform:uppercase;
-    color:#fff;margin-bottom:16px;font-weight:800;
-    line-height:1;
-  }
-  footer .lead{
-    font-family:var(--font-mono);
-    font-size:.8rem;color:#b0b0b0;font-weight:300;
-    letter-spacing:2px;text-transform:uppercase;
-    margin-bottom:36px;
-  }
-  .socials{
-    display:flex;justify-content:center;gap:0;flex-wrap:wrap;
-    border-top:1px solid #333;border-bottom:1px solid #333;
-    max-width:700px;margin:0 auto;
-  }
-  .socials a{
-    padding:20px 32px;font-family:var(--font-mono);
-    font-size:.72rem;letter-spacing:3px;font-weight:500;
-    text-transform:uppercase;color:#e0e0e0;
-    border-right:1px solid #333;transition:all .2s;
-  }
-  .socials a:last-child{border-right:none}
-  .socials a:hover{background:var(--accent);color:#fff}
-  .copy{
-    margin-top:50px;font-family:var(--font-mono);
-    font-size:.65rem;letter-spacing:2px;
-    text-transform:uppercase;color:#666;
-  }
-</style>
-</head>
+  *{bo**sizing:border-box**argin:0;padding:0}
+  html{scroll-**havior:smooth}
+  body{font-family**ar(--font-mono);background:var(--**);color:var(--ink);line-height**.65;-webkit-font-smoothing:antial**sed;font-weight:400;font-size:14p**
+  h1,h2,h3{font-family:var(--**nt-display);letter-spacing:0;text**ransform:uppercase}
+  a{color:inh**it;text-decoration:none}
+  .conta**er{max-width:1240px;margin:0 au**;padding:0 40px}
+  @media(max-wid**:640px){.container{padding:0 22px**
+  .ribbon{border-bottom:1px soli**var(--line);padding:9** 0;text-align:center;font-family:**r(--font-mono);font-size:.72rem;l**ter-spacing:3px;text-transform:up**rcase;color:var(**ink);font-weight:500;background:v**(--bg)}
+  .ribbon .dot{color:var(**accent);margin:0 12px}
+  nav{back**ound:var(--b**;border-bottom:1px solid var(--li**);padding:18px 0;position:sticky;**p:0;z-index:100}
+  .nav-inner{dis**ay:flex;justify-content:space**etween;align-items:center}
+  .log**font-family:var(--font-mono);font**ize:.85rem;font-weight:600;letter**pacing:3px;text-transform:u**ercase;display:flex;align-items:c**ter;gap:10px}
+  .logo::before{con**nt:"";width:10px;height:10px;back**ound:var(--accent);display**nline-block}
+  .nav-links{display**lex;gap:0;font-family:var(--font-**no);font-size:.72rem;letter-spaci**:2.**x;text-transform:uppercase}
+  .na**links a{color:var(--ink-soft);pad**ng:6px 20px;border-left:1px solid**ar(--**ne-soft);transition:all .2s}
+  .n**-links a:last-child{border-right:**x solid var(--line-soft)}
+  .nav-**nks a:hover{color**ar(--accent);background:var(--bg-**t)}
+  @media(max-width:768px){.na**links{display:none}}
+  .hero{padd**g:80px 0 **px}
+  .hero-grid{display:grid;gri**template-columns:360px 1fr;gap:70**;align-items:center}
+  **edia(max-width:900px){.hero-grid{**id-template-columns:1fr;gap:50px;**xt-align:left}}
+  .hero-photo{wid****00%;aspect-ratio:4/5;background:v**(--bg-alt);overflow:hidden;positi**:relative;filter:grayscale(100%) **ntrast(1.05**transition:filter .5s ease}
+  .he**-photo:hover{filter:grayscale(0%)**ontrast(1)}
+  .hero-photo img{wid**:100%;height:100%;object-**t:cover;display:block}
+  .hero-ph**o-frame{position:relative}
+  .her**photo-frame::before{content:"";po**tion:absolute;top:14px;left:14px;**ght**14px;bottom:-14px;border:1px soli**var(--accent);z-index:-1}
+  .hero**hoto-tag{position:absolute;bottom**;left:0;background**ar(--ink);color:var(--bg);font-fa**ly:var(--font-mono);font-size:.65**m;letter-spacing:2px;text-transfo**:uppercase;pad**ng:6px 12px}
+  .hero h1{font-fami**:var(--font-display);font-size:cl**p(4rem,10vw,8rem);line**eight:.88;font-weight:800;margin-**ttom:24px;letter-spacing:-1px}
+  **ero-rule{width:80**;height:3px;background:var(--ink)**argin:0 0 24px}
+  .hero-subtitle{**nt-family:var(--font-sub);font-si**:1**rem;font-weight:500;color:var(--i**);text-transform:uppercase;letter**pacing:2px;margin-bottom:16px}
+  **ero-meta{font-family:var**-font-mono);font-size:.72rem;lett**-spacing:3px;text-transform:upper**se;color:var(--muted);margin-bott**:28px}
+  .hero-**gs{display:flex;gap:8px;flex-wrap**rap}
+  .hero-tags span{font-famil**var(--font-mono);font-size:.68**m;letter-spacing:2px;text-transfo**:uppercase;padding:6px 12px;borde**1px solid var(--ink);color:var(--**k);font-weight:500}
+  section**adding:100px 0;position:relative}** section.alt{background:var(--bg-**t)}
+  .sect-head{display:flex;ali**-items:baseline;gap:24px;padding:**** 0;border-top:2px solid var(--lin**;border-bottom:1px solid var(--li**);margin-bottom:60px}
+  .sect-num**ont-family:var(--font-mono);font-**ze:.85rem;font-weight:500;color:v**(--accent);letter-spacing:3px}
+  **ect-title{font-family:var(--font-**splay);font-size**lamp(2rem,4vw,3.4rem);font-weight**00;letter-spacing:0;text-transfor**uppercase;line-height:1}** .about-grid{display:grid;grid-te**late-columns:1fr 1fr;gap:60px}
+  **edia(max-width:768px){.about-grid**rid-template-columns:1fr;**p:36px}}
+  .about-grid p{color:va**--ink-soft);font-size:.9rem;margi**bottom:16px;line-height:1.7}
+  .a**ut-gr** p strong{color:var(--ink);font-w**ght:600}
+  .about-lead{font-famil**var(--font-sub);font-size:1.5rem;**ne-height:1.3**ont-weight:500;color:var(--ink);m**gin-bottom:24px;text-transform:up**rcase;letter-spacing:.5px}
+  .jou**ey{display:grid;**p:0}
+  .j-item{display:grid;grid-**mplate-columns:60px 200px 1fr;gap**0px;padding:42px 0;**rder-top:1px solid var(--line-sof**;align-items:start}
+  .j-item:las**child{border-bottom:1px solid var**-line-soft)}
+  .j-item:hover .**num{color:var(--accent)}
+  @media**ax-width:768px){.j-item{grid-temp**te-columns:1fr;gap:14px}}
+  .j-nu**font-family:var(--font**ono);font-size:1.1rem;font-weight**00;color:var(--muted);transition:**lor .3s;letter-spacing:2px;paddin**top**px}
+  .j-date{font-family:var(--f**t-mono);font-size:.72rem;letter-s**cing:2.5px;text-transform:upperca**;color:var(--ink**font-weight:500;padding-top:10px}** .j-title{font-family:var(--font-**splay);font-size:2rem;font-weight**00;letter-spacing:0;text-transfor***ppercase;margin-bottom:6px;line-h**ght:1}
+  .j-role{font-family:var(**font-sub);font-weight:500;font-si**:.85rem;color:var(--**ted);margin-bottom:18px;text-tran**orm:uppercase;letter-spacing:1.5p**
+  .j-content ul{list-style:none;**dding:0}
+  .j**ontent li{position:relative;paddi**-left:22px;margin-bottom:8px;colo**var(--ink-soft);font-size:.88rem;**ne-height:1**;font-family:var(--font-mono);fon**weight:300}
+  .j-content li::befo**{content:"";position:absolute;lef**0;top:10px;width:12**;height:2px;background:var(--acce**)}
+  .callout{background:var(--ac**nt-soft);border-left:3px solid va**--accent);padding:18px 22**;margin-top:20px;font-family:var(**font-sub);font-size:.95rem;font-w**ght:500;color:var(--ink);line-hei**t:1.5}
+  .skills-**id{display:grid;grid-template-col**ns:repeat(auto-fit,minmax(260px,1**));gap:0;border-top:1px solid var**-line);border-left:1px solid var**-line)}
+  .skill-card{padding:30p**26px;border-right:1px solid var(-**ine);border-bottom:1px solid var(**line);background:var(--bg**transition:background .25s}
+  .sk**l-card:hover{background:var(--bg-**t)}
+  .skill-num{display:inline-b**ck;font-family:var(--font-mono);f**t-size:.**rem;color:var(--accent);margin-bo**om:14px;letter-spacing:2px;font-w**ght:500}
+  .skill-card h3{font-fa**ly:var(--font-display);font**ize:1.5rem;font-weight:700;letter**pacing:0;text-transform:uppercase**olor:var(--ink);margin-bottom:18p**line-height:1}
+  .**ill-card ul{list-style:none;font-**mily:var(--font-mono);font-size:.**em;color:var(--ink-soft);font-wei**t:400}
+  .skill-card li{padding:**x 0;border-bottom:1px dotted var(**line-soft)}
+  .skill-card li:last**hild{border-bottom:none}
+  .key-b**{text-align:center;padding**0px 30px;border-top:2px solid var**-line);border-bottom:2px solid va**--line);margin:60px 0}
+  .key-bar**{font-family**ar(--font-display);font-size:clam**1.4rem,3vw,2rem);font-weight:600;**tter-spacing:0;text-transform:upp**case;max**idth:900px;margin:0 auto;line-hei**t:1.2}
+  .key-bar .accent{font-fa**ly:var(--font-mono);color:var(--a**ent);font-weight:500;letter**pacing:3px;text-transform:upperca**;font-size:.75rem;display:block;m**gin-bottom:20px}
+  footer{backgro**d:var(--ink);color:#**e0e0;padding:80px 0 40px}
+  foote**.container{text-align:center}
+  f**ter h2{font-family:var(--font-dis**ay);font-size:clamp(2**rem,5vw,4rem);letter-spacing:0;te**-transform:uppercase;color:#fff;m**gin-bottom:16px;font-weight:800;l**e-height:**
+  footer .lead{font-family:var(-**ont-mono);font-size:.8rem;color:#**b0b0;font-weight:300;letter-spaci**:2px;text-transform:**percase;margin-bottom:36px}
+  .so**als{display:flex;justify-content:**nter;gap:0;flex-wrap:wrap;border-**p:1px**olid #333;border-bottom:1px solid**333;max-width:700px;margin:0 auto**  .socials a{padding:20** 32px;font-family:var(--font-mono**font-size:.72rem;letter-spacing:3**;font-weight:500;text-transform:u**ercase;**lor:#e0e0e0;border-right:1px soli**#333;transition:all .2s}
+  .socia** a:last-child{border-right:none}
+**.socials a:hover{background**ar(--accent);color:#fff}
+  .copy{**rgin-top:50px;font-family:var(--f**t-mono);font-size:.65rem;letter-s**cing:2px;text-trans**rm:uppercase;color:#666}
+</style>**/head>
 <body>
 
-<div class="ribbon">
-  <span>AS_001</span><span class="dot">//</span>
-  <span>Professional Profile</span><span class="dot">//</span>
-  <span>MI · 2026</span>
-</div>
+<div class="ribbon**
+  <span>AS_001</span>**pan class="dot">//</span>
+  <span**rofessional Profile</span><span c**ss="dot">//</span>
+  <span>MI · 2**6</span>**/div>
 
 <nav>
-  <div class="container nav-inner">
-    <div class="logo">AS · Stazzone</div>
-    <div class="nav-links">
+  <div class="contai**r nav-inner">
+    <div class="log**>AS · Stazzone</div>
+    <div cla**="nav-links">
       #about
-      #journey
+      **ourn**
       #expertise
       #contact
-    </div>
+**  </div>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="container hero-grid">
-    <div class="hero-photo-frame">
-      <div class="hero-photo">
-        profilo.jpg.jpeg" alt="Alessandro Stazzone" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=display:flex;height:100%;align-items:center;justify-content:center;font-family:var(--font-display);font-size:5rem;font-weight:800;color:#0a0a0a;>AS</div>'" />
-        <div class="hero-photo-tag">AS · 2026</div>
+<header**lass="hero">
+  <div class="contai**r hero-grid">
+    <div class="her**photo-fr**e">
+      <div class="hero-photo"**        profilo.jpg.jpeg" alt="Al**sandro Stazzone">**       <div class="hero-photo-tag**AS · 2026</div>
       </div>
-    </div>
+    **div>
     <div>
-      <h1>Alessandro<br/>Stazzone</h1>
-      <div class="hero-rule"></div>
-      <div class="hero-subtitle">IT E-Commerce Design &amp; Feasibility</div>
-      <div class="hero-meta">Project Specialist · Milano · Luxury Digital</div>
-      <div class="hero-tags">
-        <span>SAP CC</span>
+      <h1>Alessand**<br>Stazzone**h1>
+      <div class="hero-rule">**div>
+      <div class="hero-subti**e">IT E-Commerce Design & Feasibi**ty</div>
+      <div class="**ro-meta">Project Specialist · Mil**o · Luxury Digital</div>
+      <d** class="hero-tags">
+        <span**AP C**/span>
         <span>AEM</span>
-        <span>Algolia</span>
-        <span>Live Story</span>
-        <span>Adyen</span>
+ **     <span>Algolia</span>
+       **span>Live Story</span>
+        <s**n>Adyen</span>
       </div>
-    </div>
-  </div>
+    <**iv**  </div>
 </header>
 
-<section id="about">
+<section id="**out">
   <div class="container">
-    <div class="sect-head">
-      <div class="sect-num">01 //</div>
-      <div class="sect-title">About</div>
+ ** <div class="sect-head">
+      <d** class="sect-num">01 //</div>
+   ** <div class="sect**itle">About</div>
     </div>
-    <div class="about-grid">
-      <div>
-        <p class="about-lead">Un ponte tra business, tecnologia e vendor internazionali nel mondo del luxury digital.</p>
-        <p>Dal 2023 mi occupo di <strong>progetti digitali end-to-end</strong>: dal disegno funzionale alla stima di fattibilità, dallo sviluppo con system integrator globali fino al go-live e alla stabilizzazione post-launch.</p>
-        <p>Specializzato in ecosistemi <strong>SAP Commerce Cloud, AEM, Algolia, Live Story, Adyen</strong>, orchestrando rilasci cross-country su mercati US, JP, EU e APAC.</p>
+    **iv class="about-grid">
+      <div**        <p class="about-lead">Un **nte tra business, tecnolog** e vendor internazionali nel mond**del luxury digital.</p>
+        <**Dal**023 mi occupo di <strong>progetti**igitali end-to-end</strong>: dal **segno fun**onale alla stima di fattibilità, **llo sviluppo con system integrato**globali fino al go-live e alla st**ilizzazione post-launch.</p>
+    **  <p>Specializzato in ecosistemi **trong>SAP**ommerce Cloud, AEM, Algolia, Live**tory, Adyen</strong>, orchestrand**rilasci c**ss-country su mercati US, JP, EU **APAC.</p>
       </div>
-      <div>
-        <p>Il mio valore aggiunto è essere <strong>punto di contatto affidabile</strong> tra business stakeholders (merchandising, customer care, marketing) e team tecnici / vendor.</p>
-        <p>Garantisco delivery, tracciabilità e ownership dei processi con approccio <strong>analitico, dettagliato, iterativo</strong>.</p>
-        <p>Metodologia: <strong>Agile</strong>, con forte utilizzo di Jira, ServiceNow e KPI-driven governance.</p>
+      <div**        <p>Il**io valore aggiunto è essere <stro**>punto di contatto affidabile</st**ng> tra business stakeholders (**rchandising, customer care, marke**ng) e team tecnici / vendor.</p>
+**      <p>Garantisco delivery, tra**iabil**à e ownership dei processi con ap**occio <strong>analitico, dettagli**o, iterativo</strong>.</p>
+      **<p>**todologia: <strong>Agile</strong>**con forte utilizzo di Jira, Servi**Now e KPI-driven governance.**p>
       </div>
     </div>
-  </div>
+  </di**
 </section>
 
-<div class="container">
+<div class="containe**>
   <div class="key-bar">
-    <span class="accent">// Vision</span>
-    <p>"Trasformare la complessità dei progetti digitali luxury in delivery misurabili, con eleganza tecnica e ownership condivisa."</p>
+    <sp** class="accent">// Vision</span>
+**  <p>"**asformare la complessità dei prog**ti digitali luxury in delivery mi**rabili, con**leganza tecnica e ownership condi**sa."</p>
   </div>
 </div>
 
-<section id="journey" class="alt">
-  <div class="container">
+<sectio**id="journey" class="alt">
+  <div **ass="container**
     <div class="sect-head">
-      <div class="sect-num">02 //</div>
-      <div class="sect-title">Career Journey</div>
+    **<div class="sect-num">02 //</div>**     <div class="sect-title">Care** Journey</div>
     </div>
-
-    <div class="journey">
-
-      <div class="j-item">
-        <div class="j-num">01</div>
-        <div class="j-date">Apr 2023<br/>Feb 2024</div>
-        <div class="j-content">
-          <h3 class="j-title">Foundation Period</h3>
-          <div class="j-role">Intern — IT E-Commerce & Omnichannel</div>
-          <ul>
-            <li>Onboarding sui sistemi core (SAP CC, AEM, Algolia, CPI, Adyen) e processi Agile.</li>
-            <li>Contributo al progetto E2E Monitoring & Test Order Placement.</li>
-            <li>Tesi di Master Luxury Management (LUISS + SKEMA) sull'internalizzazione ecommerce.</li>
-            <li>Partecipazione alla definizione della Online & Omnichannel Strategy 2024/2025.</li>
-          </ul>
+    <di**class="journey">**      <div class="j-item">
+      **<div class="j-num">01</div>
+     ** <div class="j-date">Apr 2023<br>**b 2024</div>
+        <div class**j-content">
+          <h3 class="**title">Foundation Period</h3>
+   **     <div class="j-role">Intern —**T E-Commerce** Omnichannel</div>
+          <ul>**           <li>Onboarding sui sis**mi core (SAP CC, AEM, Algolia, C**, Adyen) e processi Agile.</li>
+ **         <li>Contributo al proget** E2E Monitoring &**est Order Placement.</li>
+       **   <li>Tesi di Master Luxury Mana**ment (LUISS + SKE**) sull'internalizzazione ecommerc**</li>
+            <li>Partecipazi**e alla definizione della Online &**m**channel Strategy 2024/2025.</li>
+**        </ul>
         </div>
+    **</div>
+
+      <div class="j-item"**        <div class="j-num">02</di**
+        **iv class="j-date">Mar 2024<br>Set**024</div>
+        <div class="j-c**tent">
+          <h3 class="j-tit**">Middle Period</h3>
+          **iv class="j-role">Digital E-Comme**e Design & Feasibility Project Sp**ialist</div>
+          <ul>
+     **     <li>Assunzione full-time e **nership di solution design su pro**tti di roadmap.</li>
+            **i>Contributo alla roadmap 2024: O**A, Checkout, SNPL, Algolia VM, Ad**n, Wunderkind.</li>
+            <**>Attivazione del Visual Merchandi**ng Algolia in produzione.</li>
+  **        <li>Partecipazione al Net**mm Forum 2024 Milano come referen** IT.</li>
+            <li>Kickoff**el programma Redesign — Drop 1 (N**igation & PLP).</li>
+          </**>
+          <div class="callout">**ssaggio da "supporto" a owner di **lution design; entry point nel pr**ramma Redesign.</div>
+        </d**>
       </div>
 
-      <div class="j-item">
-        <div class="j-num">02</div>
-        <div class="j-date">Mar 2024<br/>Set 2024</div>
-        <div class="j-content">
-          <h3 class="j-title">Middle Period</h3>
-          <div class="j-role">Digital E-Commerce Design & Feasibility Project Specialist</div>
-          <ul>
-            <li>Assunzione full-time e ownership di solution design su progetti di roadmap.</li>
-            <li>Contributo alla roadmap 2024: OMSA, Checkout, SNPL, Algolia VM, Adyen, Wunderkind.</li>
-            <li>Attivazione del Visual Merchandising Algolia in produzione.</li>
-            <li>Partecipazione al Netcomm Forum 2024 Milano come referente IT.</li>
-            <li>Kickoff del programma Redesign — Drop 1 (Navigation & PLP).</li>
+      <div class=**-item">
+        <div class="j-num**03</div>
+        <div class="j-da**">Ott 2024<br>Set 2025</div>
+    **  <div class="j-content">
+       ** <h3 class="j-title">Redesign Del**ery</h3>
+          <div class="j-**le">Project Lead multi-vendor — R**esign + Roadmap</div>
+          <**>
+            <li>Presidio end-to**nd del programma Online Experienc**Redesign fino al Go-Live (23 sett**bre 2025).</li>
+            <li>O**ership dei 5 Drop: PLP, PDP, Chec**ut, Customer Area, HP/CLP e Exper**nce.</li>
+            <li>Referen** IT per l'integrazione Live Story** per l'evoluzione Algolia.</li>
+ **         <li>Governance dei SAL s**timanali con Accenture, Feelslike**Live Story e Business Stream.</li**            <li>Performance Test **view e supporto al pre-Go-Live cr**s-country.</li>
           </ul>
-          <div class="callout">Passaggio da "supporto" a owner di solution design; entry point nel programma Redesign.</div>
-        </div>
+ **       <div class="callout">Conso**damento come project lead in un c**testo multi-vendor su un programm**flagship d'azienda.</div>
+       **/div>
       </div>
 
-      <div class="j-item">
-        <div class="j-num">03</div>
-        <div class="j-date">Ott 2024<br/>Set 2025</div>
-        <div class="j-content">
-          <h3 class="j-title">Redesign Delivery</h3>
-          <div class="j-role">Project Lead multi-vendor — Redesign + Roadmap</div>
-          <ul>
-            <li>Presidio end-to-end del programma Online Experience Redesign fino al Go-Live (23 settembre 2025).</li>
-            <li>Ownership dei 5 Drop: PLP, PDP, Checkout, Customer Area, HP/CLP e Experience.</li>
-            <li>Referente IT per l'integrazione Live Story e per l'evoluzione Algolia.</li>
-            <li>Governance dei SAL settimanali con Accenture, Feelslike, Live Story e Business Stream.</li>
-            <li>Performance Test Review e supporto al pre-Go-Live cross-country.</li>
+      <div cl**s="j-item">
+        <div class="j**um">04</div>
+        <div class="**date">Ott 2025<br>Feb 2026</div>
+**      <div class="j-content">
+   **     <h3 class**j-title">Post Go-Live & New Waves**h3>
+          <div class="j-role"**wner della progettual**à di prossima ondata</div>
+      **  <ul>
+            <li>Action Pla**di stabilizzazione post-Redesign **LP/PDP/**).</li>
+            <li>Contribut**all'IT Audit E-Commerce e definiz**ne action plan (SLA, third-party)**/li**            <li>Business Case & S**ategy: sostituzione di XGEN con A**olia Search full-stack.</li>**           <li>Ecommerce Highligh** 2025 e roadmap 2026.</li>
+      **    <li>Certificazione Microsoft ** Cop**ot.</li>
           </ul>
-          <div class="callout">Consolidamento come project lead in un contesto multi-vendor su un programma flagship d'azienda.</div>
-        </div>
+        **div>
       </div>
 
-      <div class="j-item">
-        <div class="j-num">04</div>
-        <div class="j-date">Ott 2025<br/>Feb 2026</div>
-        <div class="j-content">
-          <h3 class="j-title">Post Go-Live & New Waves</h3>
-          <div class="j-role">Owner della progettualità di prossima ondata</div>
-          <ul>
-            <li>Action Plan di stabilizzazione post-Redesign (PLP/PDP/HP).</li>
-            <li>Contributo all'IT Audit E-Commerce e definizione action plan (SLA, third-party).</li>
-            <li>Business Case & Strategy: sostituzione di XGEN con Algolia Search full-stack.</li>
-            <li>Ecommerce Highlights 2025 e roadmap 2026.</li>
-            <li>Certificazione Microsoft AI Copilot.</li>
-          </ul>
+      <div cla**="j-item">
+        <div class="j-**m">05</div>
+        <div class="j**ate">Feb 2026<br**ggi</div>
+        <div class="j-c**tent">
+          <h3 class="j-tit**">Management & Full Ownership</h3**          <div class="j-**le">Reference point IT E-Commerce**esign & Feasibility</div>
+       ** <ul>
+            <li>Formalizzaz**ne della responsabilità gestional**su st**am cross-country.</li>
+          **<li>Algolia Search — Go-Live prog**ssivo US, JP, EU-ROW: ind**i, mapping, rules multilingua.</l**
+            <li>Ownership della **ida Operativa Algolia (documento **cnico-**nzionale interno).</li>
+         ** <li>Presidio del CR Board & Back**g (Redesign Evolution, Wish**st, Payments, Return in Store).</**>
+            <li>Monthly Analyti** Review con KPI di Search (Funnel**Zero**esults, Trending Now).</li>
+     **     <li>Compliance & Access Mana**ment: Smartling, Jira,**dyen, offboarding vendor.</li>
+  **      </ul>
+          <div class=**allout">Ownership piena di stream**ross-country, pres**io vendor e riferimento per Busin**s, Analytics, Store Management e ** AMS.</div>
         </div>
-      </div>
-
-      <div class="j-item">
-        <div class="j-num">05</div>
-        <div class="j-date">Feb 2026<br/>Oggi</div>
-        <div class="j-content">
-          <h3 class="j-title">Management & Full Ownership</h3>
-          <div class="j-role">Reference point IT E-Commerce Design & Feasibility</div>
-          <ul>
-            <li>Formalizzazione della responsabilità gestionale su stream cross-country.</li>
-            <li>Algolia Search — Go-Live progressivo US, JP, EU-ROW: indici, mapping, rules multilingua.</li>
-            <li>Ownership della Guida Operativa Algolia (documento tecnico-funzionale interno).</li>
-            <li>Presidio del CR Board & Backlog (Redesign Evolution, Wishlist, Payments, Return in Store).</li>
-            <li>Monthly Analytics Review con KPI di Search (Funnel, Zero Results, Trending Now).</li>
-            <li>Compliance & Access Management: Smartling, Jira, Adyen, offboarding vendor.</li>
-          </ul>
-          <div class="callout">Ownership piena di stream cross-country, presidio vendor e riferimento per Business, Analytics, Store Management e IT AMS.</div>
-        </div>
-      </div>
-
-    </div>
+      **div>**    </div>
   </div>
 </section>
 
-<section id="expertise">
-  <div class="container">
-    <div class="sect-head">
-      <div class="sect-num">03 //</div>
-      <div class="sect-title">Expertise</div>
+<**ction id="expertise">
+  <div clas**"container">
+    <div class="sect**ead">
+      <div class="sect-num"**3 //</div>**     <div class="sect-title">Expe**ise</div>
     </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-num">// 01</div>
-        <h3>Piattaforme</h3>
+    <div cla**="skills-grid">
+      <div class=**kill-card">
+        <div class="s**ll-num">// 01</div>
+        **3>Piattaforme</h3>
         <ul>
-          <li>SAP Commerce Cloud</li>
-          <li>Adobe Experience Manager</li>
-          <li>Algolia (full suite)</li>
-          <li>Live Story</li>
-          <li>Adyen · SAP CDC · CPI</li>
+ **       <li>SAP Commerce Cloud</li**          <li>Adobe Experience Ma***er</li>
+          <li>Algolia (fu** suite)</li>
+          <li>Live S**ry</li>
+          <li>Adyen · SAP**DC · C**</li>
         </ul>
       </div>
-      <div class="skill-card">
-        <div class="skill-num">// 02</div>
+**    <div class="skill-card">
+    **  <div class="skill-num">// 02</d**>
         <h3>Metodologie</h3>
-        <ul>
-          <li>Agile — Sprint & Release</li>
-          <li>Feasibility & Solution Design</li>
-          <li>Multi-vendor Project Mgmt</li>
-          <li>Jira · ServiceNow · Confluence</li>
-        </ul>
+  **    <ul**          <li>Agile — Sprint & Re**ase</li>
+          <li>Feasibilit**& Solution Design</li>
+          **i>Multi-vendor Project M**t</li>
+          <li>Jira · Servi**Now · Confluence</li>
+        </u**
       </div>
-      <div class="skill-card">
-        <div class="skill-num">// 03</div>
-        <h3>Aree Progetto</h3>
+      <div class="s**ll-card">
+        <div class="ski**-num">// **</div>
+        <h3>Aree Progetto<**3>
         <ul>
-          <li>E-Commerce Redesign</li>
-          <li>Search & Merchandising</li>
-          <li>Omnichannel (BoB, PBL, RiS)</li>
-          <li>CRM Transformation</li>
-          <li>Localization (Smartling)</li>
-        </ul>
+          <li>E-C**merce Redesign</li>
+          <li**earch & Merchandising</li>
+      **  **i>Omnichannel (BoB, PBL, RiS)</li**          <li>CRM Trans**rmation</li>
+          <li>Locali**tion (Smartling)</li>
+        </u**
       </div>
-      <div class="skill-card">
-        <div class="skill-num">// 04</div>
-        <h3>Soft Skills</h3>
+      <div class="s**ll-card">
+        <div class="ski**-num">// 04</div>
+        **3>Soft Skills</h3>
         <ul>
-          <li>Stakeholder Management</li>
-          <li>Problem Solving analitico</li>
-          <li>Collaborative Leadership</li>
-          <li>Adaptability & Delivery Focus</li>
-        </ul>
+ **       <li>Stakeholder Management**li>
+          <li>Problem Solving**nalitico</li>
+          <li>Colla**rative**eadership</li>
+          <li>Adap**bility & Delivery Focus</li>
+    **  </ul>
       </div>
-      <div class="skill-card">
-        <div class="skill-num">// 05</div>
-        <h3>Formazione</h3>
+      <div c**ss="skill-card">
+        <div cla**="skill-num**// 05</div>
+        <h3>Formazion**/h3>
         <ul>
-          <li>Master LUISS + SKEMA</li>
-          <li>Luxury & Fashion Management</li>
-          <li>Microsoft AI Copilot 2025</li>
+          <li>M**ter LUISS + SKEMA</li>
+          **i>Luxury & Fashion Management**li>
+          <li>Microsoft AI Co**lot 2025</li>
         </ul>
-      </div>
-      <div class="skill-card">
-        <div class="skill-num">// 06</div>
-        <h3>Lingue</h3>
-        <ul>
-          <li>Italiano — Madrelingua</li>
-          <li>English — C1</li>
-          <li>Français — C1</li>
+     **/div>
+      <div class="skill-car**>
+        <div class="skill-num">** 06</div>**       <h3>Lingue</h3>
+        <u**
+          <li>Italiano — Madreli**ua</li>
+          <li>English — C**/li>
+          <li**rançais — C1</li>
         </ul>
-      </div>
+ **   </div>
     </div>
   </div>
-</section>
+</s**tion>
 
 <footer id="contact">
-  <div class="container">
-    <h2>Get in Touch</h2>
-    <p class="lead">// E-Commerce · Omnichannel · Digital Transformation</p>
-    <div class="socials">
-      ailto:alessandro.stazzone@example.com">Email</a>
-      <a href="https://linkedin.com/in/alessandro-stazzone" target="_blank" rel="noopener">LinkedIn</a>
-      https://github.com/stazatester
+  <d** class="container">
+    <h2>Get i***ouch</h2>
+    <p class="lead">// **Commerce · Omnichannel · Digital **ansformation</p>
+    <div class="**cials">
+      st**zone@example.com">Email</a>
+     ***target="_blank" rel="noopener">Li**edIn</a>
+      https://github.com**tazatester
     </div>
-    <div class="copy">© 2026 · AS_001 · Strictly Personal</div>
+    <div cl**s="copy">©**026 · AS_001 · Strictly Personal<**iv>
   </div>
 </footer>
 
 </body>
-</html>
+<**tml>
