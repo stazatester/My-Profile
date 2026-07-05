@@ -72,37 +72,25 @@
   .about-grid p strong{color:var(--ink);font-weight:600}
   .about-lead{font-family:var(--font-sub);font-size:1.5rem;line-height:1.3;font-weight:500;color:var(--ink);margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px}
 
-  /* WORDCLOUD */
+  /* WORDCLOUD IMG */
   .wordcloud-title{font-family:var(--font-mono);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:22px;display:block}
-  .wordcloud{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
-    gap:8px 18px;
-    padding:10px;
-    font-family:var(--font-display);
-    line-height:1;
+  .wordcloud-frame{
+    position:relative;
+    padding:20px;
+    background:var(--bg-alt);
   }
-  .wordcloud span{
-    font-family:var(--font-display);
-    line-height:.95;
-    display:inline-block;
-    white-space:nowrap;
-    letter-spacing:0;
-    text-transform:none;
+  .wordcloud-frame::before{
+    content:"";
+    position:absolute;
+    top:10px;left:10px;right:-10px;bottom:-10px;
+    border:1px solid var(--accent);
+    z-index:-1;
   }
-  /* dimensioni */
-  .wc-xxl{font-size:5.2rem;font-weight:800}
-  .wc-xl {font-size:4rem;  font-weight:700}
-  .wc-l  {font-size:3rem;  font-weight:700}
-  .wc-m  {font-size:2rem;  font-weight:600}
-  .wc-s  {font-size:1.3rem;font-weight:500}
-  .wc-xs {font-size:.95rem;font-weight:500}
-  /* colori */
-  .wc-black {color:var(--ink)}
-  .wc-purple{color:var(--accent)}
-  .wc-gold  {color:var(--gold)}
+  .wordcloud-img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
 
   /* JOURNEY */
   .journey{display:grid;gap:0}
@@ -209,57 +197,11 @@
         <p>Metodologia: <strong>Agile</strong>, con forte utilizzo di Jira, ServiceNow e KPI-driven governance.</p>
       </div>
 
-      <!-- COLONNA WORDCLOUD -->
+      <!-- COLONNA WORDCLOUD (IMMAGINE) -->
       <div>
         <span class="wordcloud-title">// Keywords Universe</span>
-        <div class="wordcloud">
-
-          <span class="wc-xs wc-black">uva</span>
-          <span class="wc-s wc-purple">prevenzione</span>
-          <span class="wc-s wc-purple">integratore</span>
-          <span class="wc-l wc-black">semi</span>
-          <span class="wc-l wc-black">confettura</span>
-          <span class="wc-s wc-gold">foglie</span>
-
-          <span class="wc-xl wc-black">gusto</span>
-          <span class="wc-s wc-black">purezza</span>
-          <span class="wc-xs wc-black">raspi</span>
-          <span class="wc-l wc-black">vetro</span>
-          <span class="wc-s wc-gold">nutraceutica</span>
-          <span class="wc-s wc-black">genuino</span>
-          <span class="wc-xs wc-black">carta</span>
-          <span class="wc-m wc-black">bianco</span>
-          <span class="wc-m wc-purple">bontà</span>
-          <span class="wc-m wc-black">sapore</span>
-          <span class="wc-s wc-black">succo</span>
-          <span class="wc-s wc-gold">farmacia</span>
-
-          <span class="wc-xl wc-purple">Good Life Lab</span>
-          <span class="wc-m wc-gold">innovazione</span>
-          <span class="wc-xs wc-gold">dolce</span>
-          <span class="wc-s wc-black">parafarmacia</span>
-          <span class="wc-xs wc-black">essenziale</span>
-          <span class="wc-xxl wc-purple">bio</span>
-
-          <span class="wc-l wc-black">minimalismo</span>
-          <span class="wc-m wc-black">salute</span>
-          <span class="wc-s wc-black">artigianale</span>
-          <span class="wc-m wc-gold">bucce</span>
-          <span class="wc-m wc-black">chiarezza</span>
-          <span class="wc-l wc-purple">eleganza</span>
-          <span class="wc-s wc-black">verde contrasto</span>
-          <span class="wc-l wc-black">viola</span>
-          <span class="wc-l wc-gold">modernità</span>
-
-          <span class="wc-xl wc-black">benessere</span>
-          <span class="wc-s wc-gold">tecnologia</span>
-          <span class="wc-xs wc-black">essenziale</span>
-          <span class="wc-m wc-purple">trasparenza</span>
-          <span class="wc-s wc-black">nero</span>
-          <span class="wc-xs wc-black">lilla</span>
-          <span class="wc-s wc-black">lineare</span>
-          <span class="wc-xs wc-black">Sagrantino</span>
-
+        <div class="wordcloud-frame">
+          Tag.jpeg" alt="Keywords universe — Good Life Lab word cloud" class="wordcloud-img">
         </div>
       </div>
 
