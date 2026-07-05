@@ -10,7 +10,7 @@
   :root{
     --bg:#ffffff; --bg-alt:#f4f4f4; --ink:#0a0a0a; --ink-soft:#2a2a2a;
     --muted:#8a8a8a; --line:#0a0a0a; --line-soft:#dcdcdc;
-    --accent:#bb8cbe; --accent-soft:#efeaf7;
+    --accent:#bb8cbe; --accent-soft:#efeaf7; --gold:#B89A4E;
     --font-display:'Barlow Condensed', sans-serif;
     --font-sub:'Barlow', sans-serif;
     --font-mono:'JetBrains Mono', monospace;
@@ -66,11 +66,43 @@
   .sect-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.4rem);font-weight:600;letter-spacing:0;text-transform:uppercase;line-height:1}
 
   /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-  @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:36px}}
   .about-grid p{color:var(--ink-soft);font-size:.9rem;margin-bottom:16px;line-height:1.7}
   .about-grid p strong{color:var(--ink);font-weight:600}
   .about-lead{font-family:var(--font-sub);font-size:1.5rem;line-height:1.3;font-weight:500;color:var(--ink);margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px}
+
+  /* WORDCLOUD */
+  .wordcloud-title{font-family:var(--font-mono);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:22px;display:block}
+  .wordcloud{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:8px 18px;
+    padding:10px;
+    font-family:var(--font-display);
+    line-height:1;
+  }
+  .wordcloud span{
+    font-family:var(--font-display);
+    line-height:.95;
+    display:inline-block;
+    white-space:nowrap;
+    letter-spacing:0;
+    text-transform:none;
+  }
+  /* dimensioni */
+  .wc-xxl{font-size:5.2rem;font-weight:800}
+  .wc-xl {font-size:4rem;  font-weight:700}
+  .wc-l  {font-size:3rem;  font-weight:700}
+  .wc-m  {font-size:2rem;  font-weight:600}
+  .wc-s  {font-size:1.3rem;font-weight:500}
+  .wc-xs {font-size:.95rem;font-weight:500}
+  /* colori */
+  .wc-black {color:var(--ink)}
+  .wc-purple{color:var(--accent)}
+  .wc-gold  {color:var(--gold)}
 
   /* JOURNEY */
   .journey{display:grid;gap:0}
@@ -166,18 +198,71 @@
       <div class="sect-title">About</div>
     </div>
     <div class="about-grid">
+
+      <!-- COLONNA TESTO -->
       <div>
         <p class="about-lead">Un ponte tra business, tecnologia e vendor internazionali nel mondo del luxury digital.</p>
-      </div>
-      <div>
         <p>Dal 2023 mi occupo di <strong>progetti digitali end-to-end</strong>: dal disegno funzionale alla stima di fattibilità, dallo sviluppo con system integrator globali fino al go-live e alla stabilizzazione post-launch.</p>
         <p>Specializzato in ecosistemi <strong>SAP Commerce Cloud, AEM, Algolia, Live Story, Adyen</strong>, orchestrando rilasci cross-country su mercati US, JP, EU e APAC.</p>
-      </div>
-      <div>
         <p>Il mio valore aggiunto è essere <strong>punto di contatto affidabile</strong> tra business stakeholders (merchandising, customer care, marketing) e team tecnici / vendor.</p>
         <p>Garantisco delivery, tracciabilità e ownership dei processi con approccio <strong>analitico, dettagliato, iterativo</strong>.</p>
         <p>Metodologia: <strong>Agile</strong>, con forte utilizzo di Jira, ServiceNow e KPI-driven governance.</p>
       </div>
+
+      <!-- COLONNA WORDCLOUD -->
+      <div>
+        <span class="wordcloud-title">// Keywords Universe</span>
+        <div class="wordcloud">
+
+          <span class="wc-xs wc-black">uva</span>
+          <span class="wc-s wc-purple">prevenzione</span>
+          <span class="wc-s wc-purple">integratore</span>
+          <span class="wc-l wc-black">semi</span>
+          <span class="wc-l wc-black">confettura</span>
+          <span class="wc-s wc-gold">foglie</span>
+
+          <span class="wc-xl wc-black">gusto</span>
+          <span class="wc-s wc-black">purezza</span>
+          <span class="wc-xs wc-black">raspi</span>
+          <span class="wc-l wc-black">vetro</span>
+          <span class="wc-s wc-gold">nutraceutica</span>
+          <span class="wc-s wc-black">genuino</span>
+          <span class="wc-xs wc-black">carta</span>
+          <span class="wc-m wc-black">bianco</span>
+          <span class="wc-m wc-purple">bontà</span>
+          <span class="wc-m wc-black">sapore</span>
+          <span class="wc-s wc-black">succo</span>
+          <span class="wc-s wc-gold">farmacia</span>
+
+          <span class="wc-xl wc-purple">Good Life Lab</span>
+          <span class="wc-m wc-gold">innovazione</span>
+          <span class="wc-xs wc-gold">dolce</span>
+          <span class="wc-s wc-black">parafarmacia</span>
+          <span class="wc-xs wc-black">essenziale</span>
+          <span class="wc-xxl wc-purple">bio</span>
+
+          <span class="wc-l wc-black">minimalismo</span>
+          <span class="wc-m wc-black">salute</span>
+          <span class="wc-s wc-black">artigianale</span>
+          <span class="wc-m wc-gold">bucce</span>
+          <span class="wc-m wc-black">chiarezza</span>
+          <span class="wc-l wc-purple">eleganza</span>
+          <span class="wc-s wc-black">verde contrasto</span>
+          <span class="wc-l wc-black">viola</span>
+          <span class="wc-l wc-gold">modernità</span>
+
+          <span class="wc-xl wc-black">benessere</span>
+          <span class="wc-s wc-gold">tecnologia</span>
+          <span class="wc-xs wc-black">essenziale</span>
+          <span class="wc-m wc-purple">trasparenza</span>
+          <span class="wc-s wc-black">nero</span>
+          <span class="wc-xs wc-black">lilla</span>
+          <span class="wc-s wc-black">lineare</span>
+          <span class="wc-xs wc-black">Sagrantino</span>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -360,8 +445,8 @@
     <h2>Get in Touch</h2>
     <p class="lead">// E-Commerce · Omnichannel · Digital Transformation</p>
     <div class="socials">
-      <a href="alessandro.stazzone@gmail.com" target="_blank" rel="noopener">Click for My Email</a>
-      <a href="https://www.linkedin.com/in/alessandro-stazzone-3575b0b6" target="_blank" rel="noopener">Click for My Linked In</a>
+      <a href="mailto:alessandro.stazzone@gmail.com">Click for My Email</a>
+      in/alessandro-stazzone-3575b0b6" target="_blank" rel="noopener">Click for My Linked In</a>
     </div>
     <div class="copy">© 2026 · Personal Profile · Strictly Personal</div>
   </div>
